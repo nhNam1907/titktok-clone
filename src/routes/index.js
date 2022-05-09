@@ -1,9 +1,10 @@
-import { HeaderOnly } from "../components/Layout";
+
+import HeaderOnly from "../components/Layout/HeaderOnly";
 import Folowing from "../pages/folow/Folowing";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile";
-import Search from "../pages/Search";
-import Upload from "../pages/Upload";
+import Upload from '../pages/Upload/Upload';
+import Search from '../pages/Search/Search'
 
 const publicRoutes = [
     { path: '/', component: Home },
