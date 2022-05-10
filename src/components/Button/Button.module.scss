@@ -11,6 +11,7 @@
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none;
+    // text-decoration: none;
 
     + .wrapper {
         margin-left: 8px;
@@ -22,6 +23,18 @@
     }
 }
 
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+// Button types
 .rounded {
     border-radius: 999px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
@@ -59,6 +72,12 @@
     }
 }
 
+.text {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 // Button sizes
 .small {
     min-width: 88px;
@@ -68,10 +87,4 @@
 .large {
     padding: 14px 16px;
     min-width: 140px;
-}
-
-.text {
-    &:hover {
-        text-decoration: underline;
-    }
 }

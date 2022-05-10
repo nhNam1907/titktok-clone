@@ -1,41 +1,31 @@
-import React from "react";
 import classNames from "classnames/bind";
-import styles from "./Button.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./Button.module.scss";
 
 const cx = classNames.bind(styles);
 
 function Button({
     to,
     href,
-    children,
     primary = false,
     outline = false,
     text = false,
-    disabled = false,
     rounded = false,
+    disabled = false,
     small = false,
     large = false,
+    children,
+    className,
     leftIcon,
     rightIcon,
-    className,
     onClick,
     ...passProps
 }) {
     let Comp = "button";
-
     const props = {
         onClick,
         ...passProps,
     };
-
-    if (to) {
-        props.to = to;
-        Comp = Link;
-    } else if (href) {
-        props.href = href;
-        Comp = "a";
-    }
 
     // Remove event listener when btn is disabled
     if (disabled) {
@@ -44,6 +34,14 @@ function Button({
                 delete props[key];
             }
         });
+    }
+
+    if (to) {
+        props.to = to;
+        Comp = Link;
+    } else if (href) {
+        props.href = href;
+        Comp = "a";
     }
 
     const classes = cx("wrapper", {
