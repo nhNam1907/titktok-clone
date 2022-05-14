@@ -2,7 +2,6 @@ import classNames from "classnames/bind";
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
@@ -25,6 +24,8 @@ import { Wrapper as PopperWrapper } from "../../../Popper";
 import AccountItem from "../../../AccountItem/AccountItem";
 import Button from "../../../Button/Button";
 import Menu from "../../../Popper/Menu/Menu";
+import { UploadIcon } from "../../../Icons/Icons";
+import Image from "../../../Image/Image";
 
 const cx = classNames.bind(styles);
 
@@ -153,7 +154,7 @@ function Header() {
                                 placement="bottom-end"
                             >
                                 <button className={cx("action-btn")}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -168,10 +169,11 @@ function Header() {
                         onChange={handleOnChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1652576400&x-signature=yeNXGNiwSswNC4EtS%2FwpoWBG8Es%3D"
                                 alt="Hoa"
                                 className={cx("user-avatar")}
+                                fallback="https://scontent.fhph3-1.fna.fbcdn.net/v/t1.6435-9/118509410_202508104633731_4908165378077955121_n.jpg?_nc_cat=111&ccb=1-6&_nc_sid=09cbfe&_nc_ohc=h7Dhmv9gsfYAX-TnJci&tn=Kl1rX5sdLdAngLrf&_nc_ht=scontent.fhph3-1.fna&oh=00_AT9_NSVJt_C4k2y3nIPtfSBlBUCTI0lt-yo9mlZqJHPE2w&oe=62A4EEBF"
                             />
                         ) : (
                             <button className={cx("more-btn")}>
